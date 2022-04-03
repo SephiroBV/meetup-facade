@@ -2,12 +2,12 @@ use actix_web::{App, HttpServer};
 use listenfd::ListenFd;
 use tracing_actix_web::TracingLogger;
 
-use web_template::init::{app_config, telemetry_config};
+use meetup_facade::init::{app_config, telemetry_config};
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
     std::env::set_var("RUST_LOG", "info");
-    telemetry_config::init("web_template");
+    telemetry_config::init("meetup_facade");
 
     let app_factory = || {
         App::new()

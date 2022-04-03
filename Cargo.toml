@@ -1,5 +1,5 @@
 [package]
-name = "web_template"
+name = "meetup_facade"
 version = "0.1.0"
 edition = "2021"
 
@@ -9,7 +9,7 @@ path = "src/lib.rs"
 
 [[bin]]
 path = "src/main.rs"
-name = "web_template"
+name = "meetup_facade"
 
 
 [dependencies]
