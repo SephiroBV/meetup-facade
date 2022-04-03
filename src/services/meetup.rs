@@ -23,7 +23,7 @@ pub async fn event_status(group_name: &str, event_id: u32) -> AnyResult<MeetupEv
     Ok(event)
 }
 
-#[tracing::instrument(name = "Sending GET request to meetup.com")]
+#[tracing::instrument(name = "Sending GET request to meetup.com", fields(peer.service = "meetup.com", span.kind = "client"))]
 async fn send_get_request(url: &str) -> AnyResult<reqwest::Response> {
     let response = reqwest::get(url)
         .await
