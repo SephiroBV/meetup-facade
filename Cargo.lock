@@ -845,6 +845,26 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a3e378b66a060d48947b590737b30a1be76706c8dd7b8ba0f2fe3989c68a853f"
 
 [[package]]
+name = "meetup_facade"
+version = "0.1.0"
+dependencies = [
+ "actix-web",
+ "anyhow",
+ "futures-util",
+ "listenfd",
+ "opentelemetry",
+ "opentelemetry-jaeger",
+ "reqwest",
+ "serde",
+ "thiserror",
+ "tracing",
+ "tracing-actix-web",
+ "tracing-bunyan-formatter",
+ "tracing-opentelemetry",
+ "tracing-subscriber",
+]
+
+[[package]]
 name = "memchr"
 version = "2.4.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1850,26 +1870,6 @@ checksum = "c060b319f29dd25724f09a2ba1418f142f539b2be99fbf4d2d5a8f7330afb8eb"
 dependencies = [
  "js-sys",
  "wasm-bindgen",
-]
-
-[[package]]
-name = "meetup_facade"
-version = "0.1.0"
-dependencies = [
- "actix-web",
- "anyhow",
- "futures-util",
- "listenfd",
- "opentelemetry",
- "opentelemetry-jaeger",
- "reqwest",
- "serde",
- "thiserror",
- "tracing",
- "tracing-actix-web",
- "tracing-bunyan-formatter",
- "tracing-opentelemetry",
- "tracing-subscriber",
 ]
 
 [[package]]
