@@ -1,13 +1,13 @@
 use anyhow::Context;
 use serde::Deserialize;
 
-use crate::{AnyResult, responses::meetup::EventInfo};
+use crate::{responses::meetup::EventInfo, AnyResult};
 
 const URL_BASE: &str = r#"https://api.meetup.com"#;
 
 #[tracing::instrument(
-name = "Requesting event info from meetup.com",
-skip(group_name, event_id)
+    name = "Requesting event info from meetup.com",
+    skip(group_name, event_id)
 )]
 pub async fn event_status(group_name: &str, event_id: u32) -> AnyResult<MeetupEventResponse> {
     let event_url = format!("{}/{}/events/{}", URL_BASE, group_name, event_id);
