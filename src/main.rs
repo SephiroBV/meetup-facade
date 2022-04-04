@@ -7,7 +7,7 @@ use meetup_facade::init::{app_config, telemetry_config};
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
     std::env::set_var("RUST_LOG", "info");
-    telemetry_config::init("meetup_facade");
+    telemetry_config::init("meetup_facade".into()).await;
 
     let app_factory = || {
         App::new()
