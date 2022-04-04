@@ -15,7 +15,7 @@ pub async fn init(app_name: String) {
         .await
         .unwrap();
 
-    let _ = tokio::spawn(tasks);
+    let _spawned = tokio::spawn(tasks);
 
     let tracer = TProvider::builder()
         .with_batch_exporter(exporter, TokioCurrentThread)
