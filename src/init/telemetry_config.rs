@@ -26,9 +26,10 @@ pub async fn init(app_name: String) {
     let formatting_layer = BunyanFormattingLayer::new(app_name, std::io::stdout);
     let subscriber = Registry::default()
         .with(env_filter)
-        .with(telemetry)
         .with(JsonStorageLayer)
-        .with(formatting_layer);
+        .with(formatting_layer)
+        .with(telemetry)
+        ;
     tracing::subscriber::set_global_default(subscriber)
         .expect("Failed to install `tracing` subscriber.")
 }
